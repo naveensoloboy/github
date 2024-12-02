@@ -1,0 +1,150 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGNIN</title>
+    <style>/* General body styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 160vh;
+            box-sizing: border-box;
+            overflow: auto;
+        }
+        
+        /* Form styling */
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            box-sizing: border-box;
+        }
+        
+        /* Form title styling */
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        /* Label styling */
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        
+        /* Input field styling */
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="date"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        /* Button styling */
+        input[type="submit"] {
+            width: 30%;
+            padding: 10px;
+            background-color: #28a745;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+        
+        /* Form group styling */
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        /* Responsive styling */
+        @media (max-width: 800px) {
+            form {
+                padding: 15px;
+            }
+        
+            h2 {
+                font-size: 20px;
+            }
+        
+            input[type="submit"] {
+                font-size: 14px;
+            }
+        }
+        </style>
+</head>
+<body>
+    
+    <form action="enterstaffs_details.php" method="post">
+        <h2><center>SIGNUP</center></h2>
+        <div class="form-group">
+            <label for="acadamicyear">Acadamic Year:</label>
+            <input type="text" id="acadamicyear" name="acadamicyear" required>
+        </div>
+       
+        
+        <div class="form-group">
+            <label for="staffid">CMS ID:</label>
+            <input type="text" id="staffid" name="staffid" required>
+        </div>
+        
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="transgender">Transgender</option>
+        </select>
+
+        <label for="department">Department:</label>
+        <input type="text" id="department" name="department" required>
+
+        <label for="mobile">Mobile:</label>
+        <input type="text" id="mobile" name="mobile" required>
+
+        <label for="gmail">mailID:</label>
+        <input type="email" id="gmail" name="gmail" required>
+
+       
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+
+       <br>
+        <input type="submit" value="REGISTER">
+        <a href="staff_login.html">Back</a>
+        <!-- <input type="submit" value="save&continue"> -->
+    </form>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Body styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fc;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header with logo, hamburger menu and register button */
+        .header {
+            background-color: #00aaff;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        /* Hamburger menu styling */
+        .navbar-toggler {
+            background-color: #fff;
+            border: none;
+            outline: none;
+            color: #000;
+            font-size: 24px;
+        }
+
+        /* Register button styling */
+        .register-btn {
+            background-color: white;
+            color: #00aaff;
+            border: none;
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .register-btn:hover {
+            background-color: #f0f0f0;
+            color: #007acc;
+        }
+
+        /* Sidebar styling with scroll feature */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100%;
+            background-color: #343a40;
+            padding-top: 60px;
+            transform: translateX(-250px);
+            transition: transform 0.3s ease-in-out;
+            z-index: 999;
+            overflow-y: auto; /* Enable vertical scrolling */
+        }
+
+        .sidebar.active {
+            transform: translateX(0);
+        }
+
+        .sidebar a {
+            color: white;
+            padding: 5px 2px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .sidebar a:hover {
+            background-color: #495057;
+        }
+
+        .submenu {
+            display: none;
+            padding-left: 20px;
+        }
+
+        /* Submenu toggle */
+        .sidebar .menu-item {
+            cursor: pointer;
+        }
+
+        .sidebar .menu-item i {
+            float: right;
+            transition: transform 0.3s ease;
+        }
+
+        .submenu-active i {
+            transform: rotate(90deg);
+        }
+
+        /* Main content styling */
+        .main-content {
+            margin-left: 0;
+            padding: 20px;
+            transition: margin-left 0.3s ease;
+        }
+
+        .main-content.shift {
+            margin-left: 250px;
+        }
+
+        .welcome-image {
+            width: 100%;
+            height: auto;
+            margin-top: 20px;
+            max-height: 400px;
+        }
+
+        /* Styling for the "ACTIVITES" heading */
+        h1 {
+            font-family: 'Arial', sans-serif;
+            font-size: 36px;
+            color: #18ecf4;
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: 2px;
+            margin: 1;
+            border-bottom: 2px solid #00aaff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header with hamburger menu and register button -->
+    <div class="header">
+        <h1>Welcome!</h1>
+        <div>
+            <!-- Register button -->
+            <button class="register-btn" onclick="window.location.href='register_form.php'">Register</button>
+            <button class="navbar-toggler" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </div>
+    
+    <!-- Sidebar menu -->
+    <div id="sidebar" class="sidebar">
+        <h1>ACTIVITES</h1>
+        <a href="#" class="menu-item" onclick="toggleSubMenu('studentMenu')">Contribution to the Student <i class="fas fa-chevron-right"></i></a>
+        <div id="studentMenu" class="submenu">
+            <a href="two_curriculam.html">-> Curriculum Designing</a>
+            <a href="value_course.php">-> Value Added Course</a>
+            <a href="higher_studies.php">-> Higher Studies</a>
+            <a href="teaching_method.php">-> Teaching Method</a>
+            <a href="field_trip.php">-> Industrial/Field Visit</a>
+            <a href="counseling_form.php">-> Student's Counseling</a>
+            <a href="student_internship.php">-> Student's Internship</a>
+            <a href="scholarship_student.php">-> Student's Scholarship</a>
+        </div>
+        <a href="#" class="menu-item" onclick="toggleSubMenu('departmentMenu')">Contribution to the Department <i class="fas fa-chevron-right"></i></a>
+        <div id="departmentMenu" class="submenu">
+            <a href="add_new_project.php">-> Consultancy Form</a>
+            <a href="guest_lecture.php">-> Guest Lecture/Hands on Training</a>
+            <a href="cms.php">-> CMS</a>
+            <a href="development_commitee.php">-> Development Committee</a>
+        </div>
+        <a href="college.html" class="menu-item" onclick="toggleSubMenu('collegeMenu')">Contribution to the College <i class="fas fa-chevron-right"></i></a>
+        <div id="collegeMenu" class="submenu">
+            <a href="#">Curriculum</a>
+            <a href="#">Teaching</a>
+            <a href="#">Model</a>
+            <a href="#">Practical</a>
+        </div>
+        <a href="#" class="menu-item" onclick="toggleSubMenu('selfMenu')">Contribution to the Self <i class="fas fa-chevron-right"></i></a>
+        <div id="selfMenu" class="submenu">
+            <a href="formpage.html">Individual Speaker/Guest Lecture</a>
+            <a href="19.html">Acted as Chair Person/Resource Person</a>
+            <a href="20.html">20</a>
+            <a href="21.html">21</a>
+            <a href="22.html">Paper Presented in other Insitutions</a>
+            <a href="23.html">Paper Presented</a>
+            <a href="24.html">Faculty Development Program Attended</a>
+            <a href="25.html">Book Publication with ISBN</a>
+            <a href="30.html">Research Paper Published</a>
+            <a href="31.html">Patent Published</a>
+            <a href="33.html">Research Grant</a>
+            <a href="34.html">Editor or Reviewer Submission</a>
+            <a href="35.html">Workshop Organized</a>
+            <a href="36.html">Project Incubated</a>
+            <a href="37.html">Staff Subject Area</a>
+            <a href="40.html">Awards and Achievements</a>
+            <a href="44.html">Involvement in IQAC,AQAR,IIC,NIRF,INDIA TODAY</a>
+        </div> 
+        <a href="management.php" class="menu-item" onclick="toggleSubMenu('collegeMenu')">Contribution to the Management <i class="fas fa-chevron-right"></i></a>
+        <a href="staff_login.html" class="menu-item">Log Out<i class="fas fa-chevron-right"></i></a>
+    </div>
+
+    <!-- Main content -->
+    <div id="main-content" class="main-content">
+        <img src="gobi.jpeg" alt="Welcome Image" class="welcome-image">
+    </div>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Function to toggle sidebar menu
+        function toggleMenu() {
+            document.getElementById('sidebar').classList.toggle('active');
+            document.getElementById('main-content').classList.toggle('shift');
+        }
+
+        // Function to toggle submenus
+        function toggleSubMenu(id) {
+            const submenu = document.getElementById(id);
+            submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+            submenu.previousElementSibling.classList.toggle('submenu-active');
+        }
+    </script>
+</body>
+</html>

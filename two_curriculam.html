@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adjustment Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="template/css/option.css"> <!-- Link to the CSS file -->
+    <style>
+        /* option.css */
+
+/* Style the container to center align the content */
+.container {
+    margin-top: 50px;
+}
+
+/* Style the button container to align buttons vertically and add spacing */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Style buttons to have consistent spacing and rounded corners */
+.btn {
+    margin-bottom: 15px;
+    width: 280px; /* Adjust the width as needed */
+    padding: 10px 20px;
+    border-radius: 25px; /* Rounded corners */
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s, transform 0.3s;
+    border: none;
+    color: #fff;
+}
+
+/* Style for primary buttons with gradient background */
+.btn-primary {
+    background: linear-gradient(45deg, #228fe9, #319fee); /* Gradient effect */
+}
+
+/* Style for secondary buttons with a flat background and border */
+.btn-secondary {
+    background: #308be6;
+    border: 2px solid #288cf0;
+}
+
+/* Hover effects */
+.btn-primary:hover {
+    background: linear-gradient(45deg, #398af5, #2f9bf9); /* Darker gradient */
+    transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+.btn-secondary:hover {
+    background: #429df9;
+    border-color: #2f91f3;
+    transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 576px) {
+    .btn {
+        width: 90%;
+    }
+}
+
+    </style>
+</head>
+
+<body>  
+
+    <div class="container text-center">
+        <div class="button-container mt-5">
+            <button class="btn btn-primary btn-lg mb-3" onclick="window.location.href='gobi_curriculam.php'">Gobi Arts & Science College</button>
+            <button class="btn btn-primary btn-lg mb-3" onclick="window.location.href='revision.php'">Revision of Curriculum</button>
+            <button class="btn btn-secondary btn-lg" onclick="window.location.href='othercollege_curriculam.php'">Other College</button>
+             </div>
+    </div>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

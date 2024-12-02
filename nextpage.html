@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accordion Sidebar</title>
+    <style>
+        body {
+            display: flex;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #4CAF50;
+            color: white;
+            height: 100vh;
+            overflow-y: auto;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .accordion {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border: none;
+            text-align: left;
+            outline: none;
+            transition: background-color 0.3s;
+        }
+        .accordion:hover {
+            background-color: #45a049;
+        }
+        .panel {
+            padding: 0 15px;
+            display: none;
+            background-color: #f4f4f4;
+            color: black;
+        }
+        .panel a {
+            display: block;
+            padding: 10px 0;
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        .panel a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <button class="accordion">Section 1</button>
+    <div class="panel">
+        <a href="#" onclick="loadContent('formpage.html')">18</a>
+        <a href="#" onclick="loadContent('19.html')">Chair Person</a>
+    </div>
+    <button class="accordion">Section 2</button>
+    <div class="panel">
+        <a href="#" onclick="loadContent('20.html')">20</a>
+        <a href="#" onclick="loadContent('21.html')">21</a>
+    </div>
+</div>
+
+<div class="content" id="contentArea">
+    <h1>Welcome</h1>
+</div>
+
+<script>
+    const accordions = document.querySelectorAll(".accordion");
+    accordions.forEach((accordion) => {
+        accordion.addEventListener("click", function () {
+            this.nextElementSibling.style.display =
+                this.nextElementSibling.style.display === "block" ? "none" : "block";
+        });
+    });
+
+    function loadContent(page) {
+        const contentArea = document.getElementById('contentArea');
+        contentArea.innerHTML = `<h1>Loading ${page}...</h1>`;
+        setTimeout(() => {
+            contentArea.innerHTML = `<h1>${page}</h1><p>This is the content for ${page}.</p>`;
+        }, 500);
+    }
+</script>
+
+</body>
+</html>
